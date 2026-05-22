@@ -18,9 +18,7 @@ class Solution:
         z = x @ w + b
         y_hat = 1 / (1 + np.exp(-z))
 
-        for i in range(len(w)):
-
-            dL_dw[i] = (y_hat - y_true) * y_hat * (1 - y_hat) * x[i]
+        dL_dw = (y_hat - y_true) * y_hat * (1 - y_hat) * x
 
         dL_db = (y_hat - y_true) * y_hat * (1 - y_hat)
 
