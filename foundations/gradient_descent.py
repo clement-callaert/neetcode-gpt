@@ -6,6 +6,6 @@ class Solution:
         # Round final answer to 5 decimal places
         x = init
         for i in range(iterations):
-            x = x - learning_rate * 2 * x
+            x += - learning_rate * 2 * x
+        return round(x, 5)
         
-        return round(x * 100000) / 100000 if not type(x) == int else x
